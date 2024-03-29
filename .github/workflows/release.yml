@@ -9,6 +9,10 @@ jobs:
     if: endsWith(github.ref, 'main')
     name: Create Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
     outputs:
       upload_url: ${{ steps.create-release.outputs.upload_url }}
     steps:
@@ -25,6 +29,10 @@ jobs:
   build-release:
     uses: ./.github/workflows/build.yml
     needs: create-release
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
     with:
       tag: ${{ github.ref_name }}
       upload_url: ${{ needs.create-release.outputs.upload_url }}
