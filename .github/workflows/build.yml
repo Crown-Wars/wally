@@ -32,7 +32,6 @@ jobs:
       pull-requests: write
       repository-projects: write
     runs-on: windows-latest
-
     steps:
     - uses: actions/checkout@v4
       with:
@@ -69,7 +68,6 @@ jobs:
       pull-requests: write
       repository-projects: write
     runs-on: macos-latest
-
     steps:
     - uses: actions/checkout@v4
       with:
@@ -113,7 +111,6 @@ jobs:
       pull-requests: write
       repository-projects: write
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
       with:
